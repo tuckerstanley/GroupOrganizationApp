@@ -2,6 +2,35 @@
   text-align: center;
 }
 
+.inRow{
+  display:flex; 
+  flex-direction:row; 
+  width: 100%;
+}
+.colInRow{
+  display:inline-block; 
+  margin: 0 auto;
+  font-size: 20px;
+}
+
+.itemFormat{
+  margin: 0 auto;
+  padding: 5px 5px;
+  font-size: 20px;
+  color: rgb(226, 128, 43);
+}
+
+.butt {
+  background-color: #041365cf; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: red;
+  display: inline-block;
+  font-size: 16px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
