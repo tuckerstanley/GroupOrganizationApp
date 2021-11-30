@@ -1,0 +1,7 @@
+{
+  "name": "group-organization-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {},
+  "workspaces": ["frontend","backend"]
+}
