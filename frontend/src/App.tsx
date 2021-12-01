@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import React, { ChangeEvent, useState } from 'react';
 import FilterableTable from './FilterableTable';
+import Authentication from './Authentication';
 
 import './App.css';
 
@@ -38,11 +39,12 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>House Portal</h1>
-      <p>Hi (will insert user here), welcome to your house portal. Here is what's going on!</p>
-      <FilterableTable choreList={choreList} reminderList={reminderList} eventList={eventList} handleClickChange={makePost} />
+      <Authentication>
+        <FilterableTable choreList={choreList} reminderList={reminderList} eventList={eventList} handleClickChange={makePost} />
+      </Authentication>
     </div>
   );
 }
 
 export default App;
+

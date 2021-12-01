@@ -12,6 +12,22 @@
   margin: 0 auto;
   font-size: 20px;
 }
+.inRowT{
+  display: inline-block;
+  flex-direction:row; 
+  width: 100%;
+}
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+.buttons
+{
+  float:right;
+  margin-top: 20px;
+  margin-right: 20px;
+}
 
 .itemFormat{
   margin: 0 auto;
