@@ -2,6 +2,19 @@
   "name": "group-organization-app",
   "version": "1.0.0",
   "private": true,
-  "scripts": {},
-  "workspaces": ["frontend","backend"]
+  "scripts": {
+    "server": "cd backend && yarn start",
+    "frontend": "cd frontend && yarn start",
+    "start": "concurrently \"yarn server\" \"yarn frontend\" "
+  },
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "dependencies": {
+    "firebase": "^9.5.0",
+    "react-firebaseui": "^6.0.0",
+    "concurrently": "4.1.0"
+
+  }
 }
