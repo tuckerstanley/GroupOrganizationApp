@@ -7,8 +7,7 @@ type postInfo = {
   details: string;
   displayed: boolean;
   title: string;
-  action: string
-  user: string
+  event: string
 }
 
 type Props = {

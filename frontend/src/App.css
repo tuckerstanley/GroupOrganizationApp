@@ -1,20 +1,31 @@
 .App {
   text-align: center;
 }
+.Modal {
+  margin-top: 20px;
+}
 
-.inRow{
-  display:flex; 
-  flex-direction:row; 
+.inRow {
+  display: flex;
+  flex-direction: row;
   width: 100%;
 }
-.colInRow{
-  display:inline-block; 
+.inRowButton {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.colInRow {
+  display: inline-block;
   margin: 0 auto;
   font-size: 20px;
 }
-.inRowT{
+.inRowT {
   display: inline-block;
-  flex-direction:row; 
+  flex-direction: row;
   width: 100%;
 }
 .column {
@@ -22,14 +33,15 @@
   width: 33.33%;
 }
 
-.buttons
-{
-  float:right;
+.buttons {
+  float: right;
   margin-top: 20px;
   margin-right: 20px;
 }
-
-.itemFormat{
+.toggle-button {
+  font-size: 16px;
+}
+.itemFormat {
   margin: 0 auto;
   padding: 5px 5px;
   font-size: 20px;
@@ -71,6 +83,10 @@
 
 .App-link {
   color: #61dafb;
+}
+
+#centered-toggle-button {
+  position: absolute;
 }
 
 @keyframes App-logo-spin {
