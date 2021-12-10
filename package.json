@@ -1,20 +1,23 @@
 {
-  "name": "group-organization-app",
+  "name": "products-app",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "server": "cd backend && yarn start",
-    "frontend": "cd frontend && yarn start",
-    "start": "concurrently \"yarn server\" \"yarn frontend\" "
+    "heroku-postbuild": "yarn workspaces run build"
   },
   "workspaces": [
-    "frontend",
-    "backend"
+    "backend",
+    "frontend"
   ],
-  "dependencies": {
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "4.1.0",
+    "cors": "^2.8.5",
     "firebase": "^9.5.0",
-    "react-firebaseui": "^6.0.0",
-    "concurrently": "4.1.0"
-
+    "heroku": "^7.59.2",
+    "react-firebaseui": "^6.0.0"
+  },
+  "resolutions": {
+    "@oclif/color": "0.1.0"
   }
 }

@@ -34,7 +34,7 @@ type Props = {
   setUser: React.Dispatch<React.SetStateAction<User | null>>;
 };
 
-const Authentication = ({user, setUser, children }: Props) => {
+const Authentication = ({ user, setUser, children }: Props) => {
   const uiConfig = {
     signInFlow: "popup",
     signInOptions: [GoogleAuthProvider.PROVIDER_ID,

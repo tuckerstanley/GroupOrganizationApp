@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useState } from 'react';
 import "./modal.css";
-import {User} from "firebase/auth";
+import { User } from "firebase/auth";
 
 export type postInfo = {
   details: string;
@@ -17,7 +17,7 @@ type ModalProps = {
   displayTitle: string;
   displayEvent: string;
   displayDetails: string;
-  displayUser: string | undefined; 
+  displayUser: string | undefined;
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
   postList: postInfo[];
   setPostList: React.Dispatch<React.SetStateAction<postInfo[]>>;
@@ -65,39 +65,71 @@ const Modal = ({ user, showModal, setShowModal, modalType, displayTitle, display
         setPostList(postList.concat({ details: details, displayed: true, title: title, event: event, user: user?.toString() }))
         console.log("here2")
       });
-
   };
-  if(modalType == "display"){
-  return (<>{showModal ?
-    <div className="modal" id="modal">
-      <h2>
-        <input className="input" type="text" placeholder={displayTitle}value={title} onChange={handleChangeTitle} />
-      </h2>
-      <div className="content">
-        <div className='inRow' >
-          <b>Type:</b>
-          <input className="input" type="text" placeholder = {displayEvent} value={event} onChange={handleChangeType} />
-        </div>
-        <br></br>
-        <div className='inRow' >
-          <b>Description:</b>
-          <textarea className="input2" value={details} placeholder = {displayDetails}onChange={handleChangeContents} />
-        </div>
-        <br></br>
+  const closeModalNoUpdates = () => {
+    setShowModal(prev => !prev);
+    setTitleModal("")
+    setTypePostModal("")
+    setPostContentsModal("")
+  };
+  /*const editModal = () => {
+    setShowModal(prev => !prev);
+    setTitleModal(title)
+    setTypePostModal(event)
+    setPostContentsModal(details)
+    console.log("Here")
+    const newPost = { details, displayed, event, title, user };
+    fetch('/deletePost', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(newPost),
+    })
+      .then((res) => res.text())
+      .then((data) => {
+        postList.forEach((element) => {
+          console.log(element.title);
+          if (element.title === title && element.user?.toString() === displayUser) {
+            element.details = details
+            element.event = event
+            console.log("here33");
+          }
+        }
+        )
+      });
+  }; */
+  if (modalType == "display") {
+    return (<>{showModal ?
+      <div className="modal" id="modal">
+        <h2>
+          {displayTitle}
+        </h2>
+        <div className="content">
+          <div className='inRow' >
+            <b>Type:</b>
+            <input className="input" type="text" placeholder={displayEvent} value={event} onChange={handleChangeType} />
+          </div>
+          <br></br>
+          <div className='inRow' >
+            <b>Description:</b>
+            <textarea className="input2" value={details} placeholder={displayDetails} onChange={handleChangeContents} />
+          </div>
+          <br></br>
 
-        <div className='inRow' >
-          <b>User:    {displayUser?.toString()}</b>
+          <div className='inRow' >
+            <b>User:    {displayUser?.toString()}</b>
+          </div>
         </div>
+        <div className="actions">
+          <button className="toggle-button" onClick={closeModalNoUpdates}>
+            Close
+          </button>
+        </div>
+
       </div>
-      <div className="actions">
-        <button className="toggle-button" onClick={closeModal}>
-          Submit Post
-        </button>
-      </div>
 
-    </div>
-
-    : null}</>);
+      : null}</>);
   } else {
     return (<>{showModal ?
       <div className="modal" id="modal">
@@ -115,7 +147,7 @@ const Modal = ({ user, showModal, setShowModal, modalType, displayTitle, display
             <textarea className="input2" value={details} onChange={handleChangeContents} />
           </div>
           <br></br>
-  
+
           <div className='inRow' >
             <b>User:    {user?.toString()}</b>
           </div>
@@ -125,9 +157,9 @@ const Modal = ({ user, showModal, setShowModal, modalType, displayTitle, display
             Submit Post
           </button>
         </div>
-  
+
       </div>
-  
+
       : null}</>);
   }
 };

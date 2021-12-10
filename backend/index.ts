@@ -1,4 +1,6 @@
 import express from 'express';
+import path from 'path';
+import cors from 'cors';
 
 const admin = require("firebase-admin");
 
@@ -10,7 +12,8 @@ admin.initializeApp({
 
 const db = admin.firestore();
 const app = express();
-
+app.use(cors());
+app.use(express.static(path.join(__dirname, '../frontend/build')));
 // allow request body parsing
 app.use(express.json());
 

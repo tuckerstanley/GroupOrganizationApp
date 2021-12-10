@@ -31,7 +31,7 @@ type Props = {
 }
 
 const FilterableTable = ({
-  choreList, reminderList, eventList, setShowModal, setDisplayTitle, setDisplayEvent, setDisplayDetails, setDisplayUser,setModalType, handleClickChange
+  choreList, reminderList, eventList, setShowModal, setDisplayTitle, setDisplayEvent, setDisplayDetails, setDisplayUser, setModalType, handleClickChange
 }: Props) => {
   return (
     < div  >
@@ -39,45 +39,45 @@ const FilterableTable = ({
         <div className='inRow' >
           <div className='colInRow' >
             <h2>Chore List</h2>
-            <EventColumn 
-              evType="chore" 
-              valList={choreList} 
+            <EventColumn
+              evType="chore"
+              valList={choreList}
               handleClickChange={handleClickChange}
-              setShowModal = {setShowModal}
-              setDisplayTitle = {setDisplayTitle}
-              setDisplayEvent = {setDisplayEvent}
-              setDisplayDetails = {setDisplayDetails}
-              setDisplayUser = {setDisplayUser}
-              setModalType = {setModalType}
-              />
+              setShowModal={setShowModal}
+              setDisplayTitle={setDisplayTitle}
+              setDisplayEvent={setDisplayEvent}
+              setDisplayDetails={setDisplayDetails}
+              setDisplayUser={setDisplayUser}
+              setModalType={setModalType}
+            />
           </div>
           <div className='colInRow' >
             <h2>Reminder List</h2>
-            <EventColumn 
-              evType="reminder" 
-              valList={reminderList} 
-              handleClickChange={handleClickChange} 
-              setShowModal = {setShowModal}
-              setDisplayTitle = {setDisplayTitle}
-              setDisplayEvent = {setDisplayEvent}
-              setDisplayDetails = {setDisplayDetails}
-              setDisplayUser = {setDisplayUser}
-              setModalType = {setModalType}
-              />
+            <EventColumn
+              evType="reminder"
+              valList={reminderList}
+              handleClickChange={handleClickChange}
+              setShowModal={setShowModal}
+              setDisplayTitle={setDisplayTitle}
+              setDisplayEvent={setDisplayEvent}
+              setDisplayDetails={setDisplayDetails}
+              setDisplayUser={setDisplayUser}
+              setModalType={setModalType}
+            />
           </div>
           <div className='colInRow' >
             <h2>Event List</h2>
-            <EventColumn 
-              evType="event" 
-              valList={eventList} 
+            <EventColumn
+              evType="event"
+              valList={eventList}
               handleClickChange={handleClickChange}
-              setShowModal = {setShowModal}
-              setDisplayTitle = {setDisplayTitle}
-              setDisplayEvent = {setDisplayEvent}
-              setDisplayDetails = {setDisplayDetails}
-              setDisplayUser = {setDisplayUser}
-              setModalType = {setModalType}
-              />
+              setShowModal={setShowModal}
+              setDisplayTitle={setDisplayTitle}
+              setDisplayEvent={setDisplayEvent}
+              setDisplayDetails={setDisplayDetails}
+              setDisplayUser={setDisplayUser}
+              setModalType={setModalType}
+            />
           </div>
         </div>
       }
