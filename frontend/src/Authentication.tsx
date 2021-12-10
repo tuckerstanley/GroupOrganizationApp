@@ -30,11 +30,11 @@ const auth = getAuth(firebase);
 
 type Props = {
   readonly children: React.ReactNode;
+  user: User | null;
+  setUser: React.Dispatch<React.SetStateAction<User | null>>;
 };
 
-const Authentication = ({ children }: Props) => {
-  const [user, setUser] = useState<User | null>(null);
-
+const Authentication = ({user, setUser, children }: Props) => {
   const uiConfig = {
     signInFlow: "popup",
     signInOptions: [GoogleAuthProvider.PROVIDER_ID,

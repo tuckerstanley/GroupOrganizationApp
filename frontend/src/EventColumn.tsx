@@ -8,19 +8,26 @@ type postInfo = {
   displayed: boolean;
   title: string;
   event: string;
-  user: string;
+  user: string | undefined;
 }
 
 type Props = {
   evType: string;
   valList: postInfo[];
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+  setDisplayTitle: React.Dispatch<React.SetStateAction<string>>;
+  setDisplayEvent: React.Dispatch<React.SetStateAction<string>>;
+  setDisplayDetails: React.Dispatch<React.SetStateAction<string>>;
+  setDisplayUser: React.Dispatch<React.SetStateAction<string | undefined>>;
+  setModalType: React.Dispatch<React.SetStateAction<string>>;
+
   //handleClickChange: React.Dispatch<React.SetStateAction<postInfo[]>>;
   handleClickChange: React.Dispatch<React.SetStateAction<postInfo[]>>;
 }
 
 
 const EventColumn = ({
-  evType, valList, handleClickChange
+  evType, valList, setShowModal, setDisplayTitle, setDisplayEvent, setDisplayDetails, setDisplayUser, setModalType, handleClickChange
 }: Props) => {
   const handleClick = (index: number) => {
     valList[index].displayed = !valList[index].displayed
@@ -32,7 +39,19 @@ const EventColumn = ({
       {
         valList.map(({ details, displayed, title, event, user }, index) => (
           <div>
-            < ItemBar itemName={title} handleHiddenChange={handleClick(index)} />
+            < ItemBar 
+              itemName={title} 
+              itemEvent ={event}
+              itemDetails = {details}
+              itemUser = {user}
+              handleHiddenChange={handleClick(index)} 
+              setShowModal = {setShowModal}
+              setDisplayTitle = {setDisplayTitle}
+              setDisplayEvent = {setDisplayEvent}
+              setDisplayDetails = {setDisplayDetails}
+              setDisplayUser = {setDisplayUser}
+              setModalType = {setModalType}
+              />
             <p></p>
           </div>
         ))
