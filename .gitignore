@@ -30,3 +30,4 @@ yarn-error.log*
 
 # Environment Vars
 .envnode_modules
+.env
