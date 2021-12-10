@@ -3,13 +3,13 @@ import React, { ChangeEvent, useEffect, useState } from 'react';
 import FilterableTable from './FilterableTable';
 import Authentication from './Authentication';
 import Modal from "./Modal"
-import {User} from "firebase/auth";
+import { User } from "firebase/auth";
 import './App.css';
 
 //type eventType = "chore" | "event" | "reminder"
 
 
-const reminder1 = { details: "", displayed: true, title: "Pay dues to Timmy by tomorrow", event: "reminder", user: "Ethan Stanley" }
+const reminder1 = { details: "", displayed: true, title: "Pay dues to Timmy ASAP", event: "reminder", user: "Ethan Stanley" }
 const reminder2 = { details: "", displayed: true, title: "Go Grocery shopping and buy 2 milks", event: "reminder", user: "Ethan Stanley" }
 const reminder3 = { details: "", displayed: true, title: "Rent due to Pat in 5 days", event: "reminder", user: "Ethan Stanley" }
 const chore1 = { details: "", displayed: true, title: "Clean bathroom sink and fix shower curtain", event: "chore", user: "Ethan Stanley" }
@@ -65,22 +65,22 @@ const App = () => {
   //setEventList(eventList.concat(post1))
   return (
     <div className="App">
-      <Authentication 
-        user = {user}
-        setUser = {setUser}
+      <Authentication
+        user={user}
+        setUser={setUser}
       >
-      <FilterableTable 
-        choreList={choreList} 
-        reminderList={reminderList} 
-        eventList={eventList} 
-        handleClickChange={makePost} 
-        setShowModal = {setShowModal}
-        setDisplayTitle = {setDisplayTitle}
-        setDisplayEvent = {setDisplayEvent}
-        setModalType = {setModalType}
-        setDisplayDetails = {setDisplayDetails}
-        setDisplayUser = {setDisplayUser}
-      />
+        <FilterableTable
+          choreList={choreList}
+          reminderList={reminderList}
+          eventList={eventList}
+          handleClickChange={makePost}
+          setShowModal={setShowModal}
+          setDisplayTitle={setDisplayTitle}
+          setDisplayEvent={setDisplayEvent}
+          setModalType={setModalType}
+          setDisplayDetails={setDisplayDetails}
+          setDisplayUser={setDisplayUser}
+        />
         <div className='inRowButton'>
           <button
             className="toggle-button"
@@ -93,7 +93,7 @@ const App = () => {
         </div>
         <div className="Modal">
           <Modal
-            user = {user?.displayName}
+            user={user?.displayName}
             showModal={showModal}
             setShowModal={setShowModal}
             postList={postList}
@@ -101,11 +101,11 @@ const App = () => {
             setEventList={setEventList}
             setReminderList={setReminderList}
             setChoreList={setChoreList}
-            modalType = {modalType}
-            displayTitle = {displayTitle}
-            displayEvent = {displayEvent}
-            displayDetails = {displayDetails}
-            displayUser = {displayUser}
+            modalType={modalType}
+            displayTitle={displayTitle}
+            displayEvent={displayEvent}
+            displayDetails={displayDetails}
+            displayUser={displayUser}
           />
         </div>
       </Authentication>
