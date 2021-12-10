@@ -22,7 +22,8 @@ type Post = {
   details: string;
   displayed: boolean;
   title: string;
-  event: string
+  event: string;
+  user: string;
 };
 
 type PostWithId = Post & {

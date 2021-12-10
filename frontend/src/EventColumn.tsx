@@ -7,7 +7,8 @@ type postInfo = {
   details: string;
   displayed: boolean;
   title: string;
-  event: string
+  event: string;
+  user: string;
 }
 
 type Props = {
@@ -29,7 +30,7 @@ const EventColumn = ({
   return (
     <div>
       {
-        valList.map(({ details, displayed, title, event }, index) => (
+        valList.map(({ details, displayed, title, event, user }, index) => (
           <div>
             < ItemBar itemName={title} handleHiddenChange={handleClick(index)} />
             <p></p>
