@@ -108,12 +108,12 @@ const Modal = ({ user, showModal, setShowModal, modalType, displayTitle, display
         <div className="content">
           <div className='inRow' >
             <b>Type:</b>
-            <input className="input" type="text" placeholder={displayEvent} value={event} onChange={handleChangeType} />
+            <input className="input" type="text" placeholder={displayEvent} value={event} readOnly />
           </div>
           <br></br>
           <div className='inRow' >
             <b>Description:</b>
-            <textarea className="input2" value={details} placeholder={displayDetails} onChange={handleChangeContents} />
+            <textarea className="input2" value={details} placeholder={displayDetails} readOnly />
           </div>
           <br></br>
 
